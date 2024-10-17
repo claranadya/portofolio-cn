@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link to Custom Favicon -->
+    <link rel="icon" type="image/png" href="assets/logo cn.png"> 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: orange;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: bisque;
+            padding: 15px;
+            margin-bottom: 40px;
+        }
+        .navbar-brand {
+            font-family: 'Russo One', sans-serif;
+            color: orange !important;
+            font-size: 1.8rem;
+        }
+        .nav-link {
+            color: orange !important;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #28603f !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #28603f 0%, #28603f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            gap: 50px;
+        }
+        .hero h1 {
+            font-family: 'Russo One', sans-serif;
+            font-size: 5rem;
+            color: bisque;
+            animation: glitch 1.5s infinite;
+            text-transform: uppercase;
+            padding-top: 50px;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: bisque;
+            opacity: 0.9;
+            margin-right: 0px;
+        }
+        .btn-hero {
+            background-color: orange;
+            color: #28603f;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .btn-hero:hover {
+            background-color: bisque;
+            color: #28603f;
+            transform: scale(1.1);
+        }
+
+        /* Glitch Animation */
+        @keyframes glitch {
+            0% {
+                transform: skew(0.2deg);
+                opacity: 0.9;
+            }
+            20% {
+                transform: skew(-0.2deg);
+                opacity: 0.8;
+            }
+            40% {
+                transform: skew(0.2deg);
+                opacity: 0.7;
+            }
+            60% {
+                transform: skew(-0.1deg);
+                opacity: 0.8;
+            }
+            80% {
+                transform: skew(0.2deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: skew(-0.2deg);
+                opacity: 1;
+            }
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, bisque 0%, bisque 100%);
+            padding: 100px 0;
+            justify-content: center;
+        }
+        .container-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            gap: 20px;  
+        }
+        #about h2 {
+            color: orange;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        #about p {
+            color: #28603f;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        #skills {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #28603f 0%, #28603f 100%);
+            color: bisque;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 36px;
+            color: #ffc107;
+            margin-bottom: 40px;
+        }
+        #skills.skills-grid {
+            display: grid;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px 0;
+            padding: 20px 0;
+        }
+        #skills .skill-item {
+            background-color: #28603f;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px #28603f;
+            transition: transform 0.3s ease;
+            border: 2px dotted orange;
+            width: 20vw;
+            height: 30v;
+            margin-bottom: 20px;
+           margin-left: 75px;
+        }
+        #skills .skill-item:hover {
+            transform: scale(1.05);
+        }
+        #skills .skill-item img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #skills.skill-item h3 {
+            font-size: 18px;
+            color: #ffc107;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: bisque;
+            padding: 100px 0;
+            text-align: center;
+            color: #28603f;
+        }
+        #contact h2 {
+            font-size: 2.5rem;
+            color: orange;
+            margin-bottom: 40px;
+        }
+        #contact a {
+            background-color: orange;
+            color: #28603f;
+            padding: 10px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            text-transform: lowercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #contact a:hover {
+            background-color: #28603f;
+            color: bisque;
+        }
+        #contact .contact-info {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px;
+        }
+        #contact .contact-info p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #28603f;
+            color: orange;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-stars" viewBox="0 0 20 20">
+                <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.73 1.73 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.73 1.73 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.73 1.73 0 0 0 3.407 2.31zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z"/>
+              </svg>
+            <a class="navbar-brand" href="#">Clara Nadya</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>  
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="assets/profil cn.png" alt="foto profil" width="auto" height="500px" style="margin-top: 100px; margin-left: 20px;">
+        <div class="container-grid">
+            <h1>Hello, I'm CN</h1>
+            <p>Saya adalah seorang mahasiswi semester 7 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+              </svg></p>
+            <a href="#about" class="btn btn-hero">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="container-flex">
+            <p>Perkenalkan nama saya Clara Nadya, mahasiswi Universitas Dinamika Bangsa jurusan Sistem Informasi. Saat ini, saya sedang mengikuti program MSIB dari Celerates Indonesia untuk memperdalam pengetahuan dan keterampilan saya di bidang Web Development dan UI/UX Design.</p>
+            <img src="assets/kartu nama cn.png" alt="kartu nama" width="ms-auto" height="300px" style="margin-right: auto;">
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="text-center">My Skills</h2>
+        <div class="skills-grid row mt-5">
+            <div class="col-md-2 skill-item">
+                <img src="assets/flutter.png" alt="Flutter">
+                <h3>Flutter</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/laravel.png" alt="Laravel">
+                <h3>Laravel</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/css.png" alt="CSS">
+                <h3>CSS</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/html.png" alt="HTML">
+                <h3>HTML</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/balsamiq.png" alt="balsamiq">
+                <h3>Balsamiq</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/bootstrap.png" alt="bootstrap">
+                <h3>Bootstrap</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/canva.png" alt="canva">
+                <h3>Canva</h3>
+            </div>
+            <div class="col-md-2 skill-item">
+                <img src="assets/php.png" alt="phpmyadmin">
+                <h3>phpMyAdmin</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+              <a href="tel:+6285357103034">+62 853-5710-3034</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+              <a href="https://www.instagram.com/ndyacla" target="_blank">ndyacla</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="50" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+              <a href="mailto:ndyacla@gmail.com">ndyacla@gmail.com</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Clara Nadya. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
